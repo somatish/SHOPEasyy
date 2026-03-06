@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHOPEasyy India – भारत की अपनी दुकान 🇮🇳</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="tricolor"></div>
+
+<!-- LANGUAGE BAR -->
+<div class="lang-bar">
+  <span class="lb-label">🌐 भाषा:</span>
+  <div class="lb-pills" id="langPills"></div>
+  <button class="lb-more" onclick="openLM()">+ सभी भाषाएं (36)</button>
+</div>
+
+<!-- LANGUAGE MODAL -->
+<div class="lm-bg" id="lmBg">
+  <div class="lm-box">
+    <div class="lm-head">
+      <div><h2>🌐 अपनी भाषा चुनें</h2><p>Choose Your Language — 36 Indian Languages</p></div>
+      <button class="lm-close" onclick="closeLM()">✕</button>
+    </div>
+    <div class="lm-search"><input type="text" id="lsearch" placeholder="Search language / भाषा खोजें..." oninput="filterL()"></div>
+    <div class="lm-body" id="lmbody"></div>
+    <div class="lm-foot">
+      <div class="lm-selinfo">Selected: <strong id="selLname">हिंदी (Hindi)</strong></div>
+      <button class="apply-btn" onclick="applyL()">✓ Apply Language</button>
+    </div>
+  </div>
+</div>
+
+<!-- ANNOUNCEMENT -->
+<div class="ann">
+  <span>🚀 FREE Delivery ₹499+</span><span>•</span>
+  <span>✅ UPI • COD • EMI</span><span>•</span>
+  <span>🔄 30-Day Easy Returns</span><span>•</span>
+  <span>🇮🇳 Vocal for Local</span>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="#" class="logo">SHOP<span>Easyy</span><sub>.in</sub></a>
+  <button class="locbtn"><span>Deliver to</span><strong>📍 Mumbai 400001</strong></button>
+  <div class="srchbar">
+    <select><option>All</option><option>Mobiles</option><option>Fashion</option><option>Grocery</option><option>Books</option><option>Home</option></select>
+    <input type="text" id="si" placeholder="खोजें products, brands और बहुत कुछ...">
+    <button onclick="doSearch()">🔍</button>
+  </div>
+  <div class="hacts">
+    <button class="lang-hbtn" onclick="openLM()"><span id="hlflag">🇮🇳</span><span id="hlname">हिंदी</span> ▾</button>
+    <button class="hbtn"><span id="signinlbl">नमस्ते, साइन इन</span><strong id="acclbl">खाता & सूची ▾</strong></button>
+    <button class="hbtn"><span>Returns</span><strong>& Orders</strong></button>
+    <div class="cwrap">
+      <button class="hbtn" onclick="toggleCart()"><span style="font-size:1.45rem;line-height:1">🛒</span><strong id="cartlbl">Cart</strong></button>
+      <div class="cbadge" id="cbadge">0</div>
+    </div>
+  </div>
+</header>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="#">☰ <span id="nav-all">सभी Categories</span></a>
+  <a href="#" class="sp">⚡ <span id="nav-deals">आज के Deals</span></a>
+  <a href="#">📱 Mobiles</a><a href="#">👗 Fashion</a><a href="#">🏠 Home</a>
+  <a href="#">🛒 Grocery</a><a href="#">📚 Books</a><a href="#">⚽ Sports</a>
+  <a href="#">💊 Health</a><a href="#">💄 Beauty</a><a href="#">🏭 Indian Brands</a>
+  <a href="#" class="sp">⭐ SHOPEasyy Plus</a>
+  <a href="#">🤝 <span id="nav-sell">Sell करें</span></a>
+</nav>
+
+<!-- HERO SLIDER -->
+<div class="hero-wrap">
+  <div class="hero-sl">
+    <button class="sarr prev" onclick="cslide(-1)">‹</button>
+    <div class="slides" id="slides">
+      <div class="slide">
+        <div class="slide-cnt">
+          <div class="stag">🔥 Mega Dhamaka Sale</div>
+          <h1>Mobiles पर<br>70% तक छूट!</h1>
+          <p>Top Brands — OnePlus, Samsung, Redmi</p>
+          <div class="slide-btns"><button class="sbw">अभी खरीदें</button><button class="sbo">सभी Deals</button></div>
+        </div>
+        <img class="slide-img" src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&q=80" alt="Mobile phones" onerror="this.style.display='none'">
+      </div>
+      <div class="slide">
+        <div class="slide-cnt">
+          <div class="stag">🌿 Vocal for Local</div>
+          <h1>Indian Brands<br>की ताकत!</h1>
+          <p>Tata, Amul, Patanjali — स्वदेशी खरीदें</p>
+          <div class="slide-btns"><button class="sbw" style="color:#138808">Shop Indian</button><button class="sbo">🇮🇳 Explore</button></div>
+        </div>
+        <img class="slide-img" src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=600&q=80" alt="Shopping" onerror="this.style.display='none'">
+      </div>
+      <div class="slide">
+        <div class="slide-cnt">
+          <div class="stag">⭐ SHOPEasyy Plus</div>
+          <h1>Plus Membership<br>के फायदे!</h1>
+          <p>Unlimited Free Delivery। 30 दिन Free Trial!</p>
+          <div class="slide-btns"><button class="sbw" style="color:#000080">Join Plus</button><button class="sbo">More Benefits</button></div>
+        </div>
+        <img class="slide-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="Delivery" onerror="this.style.display='none'">
+      </div>
+      <div class="slide">
+        <div class="slide-cnt">
+          <div class="stag">🪔 Festival Special</div>
+          <h1>Diwali Gifts<br>का जश्न!</h1>
+          <p>Premium Gift Sets, Diyas — Fast Delivery!</p>
+          <div class="slide-btns"><button class="sbw" style="color:#C62828">Gift करें</button><button class="sbo">Collections</button></div>
+        </div>
+        <img class="slide-img" src="https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?w=600&q=80" alt="Diwali" onerror="this.style.display='none'">
+      </div>
+    </div>
+    <button class="sarr next" onclick="cslide(1)">›</button>
+    <div class="sdots"><button class="sdot active" onclick="goslide(0)"></button><button class="sdot" onclick="goslide(1)"></button><button class="sdot" onclick="goslide(2)"></button><button class="sdot" onclick="goslide(3)"></button></div>
+  </div>
+  <div class="side-banners">
+    <div class="sbann sb1"><h3>⚡ Flash Sale</h3><p>Laptops 50% off<br>Today only!</p><span class="si">💻</span></div>
+    <div class="sbann sb2"><h3>👗 New Fashion</h3><p>Ethnic wear ₹299 से</p><span class="si">🛍</span></div>
+    <div class="sbann sb3"><h3>🌿 Organic India</h3><p>Certified Organic Grocery</p><span class="si">🥗</span></div>
+  </div>
+</div>
+
+<main>
+
+<!-- TRUST -->
+<section>
+  <div class="trust-strip">
+    <div class="titem"><div class="ticon">🚀</div><div class="ttext"><strong id="t1">Free Delivery</strong><span>₹499+ orders पर</span></div></div>
+    <div class="titem"><div class="ticon">💰</div><div class="ttext"><strong id="t2">Cash on Delivery</strong><span>India में सभी जगह</span></div></div>
+    <div class="titem"><div class="ticon">🔄</div><div class="ttext"><strong id="t3">Easy Returns</strong><span>30 दिन No Questions</span></div></div>
+    <div class="titem"><div class="ticon">🔒</div><div class="ttext"><strong id="t4">100% Secure</strong><span>UPI • Cards • NetBanking</span></div></div>
+    <div class="titem"><div class="ticon">🏭</div><div class="ttext"><strong>GST Invoice</strong><span>Business purchases</span></div></div>
+    <div class="titem"><div class="ticon">📞</div><div class="ttext"><strong id="t5">24/7 Support</strong><span>Hindi & English</span></div></div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section>
+  <div class="sec-head">
+    <div class="sec-title">🛍️ <span id="catTitle">Categories</span></div>
+    <a href="#" class="see-all" id="sacat">सभी देखें →</a>
+  </div>
+  <div class="cat-scroll" id="catScroll"></div>
+</section>
+
+<!-- FESTIVAL -->
+<section>
+  <div class="fest">
+    <div class="ft"><h2>🪔 <span id="festT">Diwali Dhamaka Sale!</span></h2><p id="festS">India का सबसे बड़ा Festival Sale — 80% तक छूट!</p></div>
+    <div class="ftimer"><div class="tb"><span class="tn" id="tH">08</span><span class="tl">Hrs</span></div><div class="tb"><span class="tn" id="tM">45</span><span class="tl">Min</span></div><div class="tb"><span class="tn" id="tS">30</span><span class="tl">Sec</span></div></div>
+    <button class="fbtn" id="festBtn">अभी Shop करें →</button>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section>
+  <div class="sec-head">
+    <div class="sec-title">🔥 <span id="dealsT">आज के Best Deals</span></div>
+    <a href="#" class="see-all">सभी deals →</a>
+  </div>
+  <div class="filter-row">
+    <button class="fchip active" onclick="filterP('all',this)" id="fc-all">सभी</button>
+    <button class="fchip" onclick="filterP('electronics',this)">📱 Electronics</button>
+    <button class="fchip" onclick="filterP('fashion',this)">👗 Fashion</button>
+    <button class="fchip" onclick="filterP('grocery',this)">🛒 Grocery</button>
+    <button class="fchip" onclick="filterP('home',this)">🏠 Home</button>
+    <button class="fchip" onclick="filterP('indian',this)">🇮🇳 Indian</button>
+    <select class="sort-sel"><option>Sort: Relevance</option><option>Price ↑</option><option>Price ↓</option><option>Rating</option></select>
+  </div>
+  <div class="pgrid" id="pgrid"></div>
+</section>
+
+<!-- RECENTLY VIEWED -->
+<section>
+  <div class="sec-head">
+    <div class="sec-title">👀 <span id="recentT">Recently Viewed</span></div>
+  </div>
+  <div class="hscroll" id="recentRow"></div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg">
+    <div class="fc"><h4>हमारे बारे में</h4><a href="#">About SHOPEasyy</a><a href="#">Careers</a><a href="#">Press</a><a href="#">Investors</a><a href="#">Sustainability</a></div>
+    <div class="fc"><h4>Sell करें</h4><a href="#">Seller Central</a><a href="#">Register</a><a href="#">Fulfilment</a><a href="#">Seller App</a></div>
+    <div class="fc"><h4>Customer Service</h4><a href="#">Help Centre</a><a href="#">Track Order</a><a href="#">Returns</a><a href="#">EMI Details</a></div>
+    <div class="fc"><h4>Policies</h4><a href="#">Privacy Policy</a><a href="#">Terms</a><a href="#">Cookie Policy</a><a href="#">Grievance Officer</a></div>
+    <div class="fc"><h4>Our Apps</h4><a href="#">📱 Android</a><a href="#">🍎 iOS</a><a href="#">💳 SHOPEasyy Pay</a></div>
+  </div>
+  <div class="fb">
+    <div class="flogo">SHOP<span>Easyy</span>.in</div>
+    <div class="fcopy">© 2026 SHOPEasyy India Pvt. Ltd. | Mumbai, Maharashtra | GST: 27AAACS1234A1Z5</div>
+    <div class="fbdg"><span class="fdg">🔒 SSL</span><span class="fdg">🇮🇳 Made in India</span><span class="fdg">📋 GST</span><span class="fdg">🏦 RBI</span></div>
+  </div>
+  <div class="fline">🇮🇳 Proudly Indian | भारत में बना, भारत के लिए | Helpline: 1800-XXX-XXXX (Toll Free)</div>
+</footer>
+
+<!-- CART DRAWER -->
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+<div class="cdrawer" id="cdrawer">
+  <div class="cdh"><h3>🛒 <span id="cartDTitle">आपका Cart</span></h3><button class="cdc" onclick="toggleCart()">✕</button></div>
+  <div class="cd-items" id="cditems"></div>
+  <div class="cdf" id="cdf" style="display:none">
+    <div class="cds"><span id="sublbl">Subtotal</span><span id="cdsub">₹0</span></div>
+    <div class="cdg"><span>GST Included</span><span id="cdgst">₹0</span></div>
+    <div class="cdt"><span id="totlbl">Total</span><span id="cdtot">₹0</span></div>
+    <button class="cco" id="chkbtn" onclick="checkout()">🛒 Checkout करें →</button>
+    <div class="plgs"><span class="plg">UPI</span><span class="plg">GPay</span><span class="plg">PhonePe</span><span class="plg">COD</span><span class="plg">EMI</span><span class="plg">RuPay</span></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- PRODUCT DETAIL MODAL -->
+<div class="product-modal-overlay" id="productModal">
+  <div class="product-modal-box">
+    <div class="pmcontent" id="pmcontent"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
